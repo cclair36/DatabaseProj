@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleDriver;
 
 /**
@@ -37,23 +38,16 @@ public class DatabaseViews extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Please enter your name to look up your purchased cars: ");
 
         jButton1.setText("Find Best Dealer");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -81,9 +75,21 @@ public class DatabaseViews extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Result:");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jButton4.setText("Search");
+            },
+            new String [] {
+                "Make", "Model", "Payment Left"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel2.setText("Please enter your name and assigned role: ");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "David O. (Car Owner)", "Maximus W. (Visitor)", "Cody C. (Dealer)", "Kyle S. (Visitor)" }));
+
+        jButton4.setText("Sign In");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton4MouseClicked(evt);
@@ -95,59 +101,62 @@ public class DatabaseViews extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(33, 33, 33))
-            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jButton3))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(173, 173, 173)
+                                .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(126, 126, 126)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton3)
+                                    .addComponent(jButton2)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(34, 34, 34)
-                .addComponent(jButton3)
-                .addGap(28, 28, 28))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton1)
+                        .addGap(81, 81, 81)
+                        .addComponent(jButton2)
+                        .addGap(124, 124, 124)
+                        .addComponent(jButton3)))
+                .addGap(55, 55, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-//SELECT owners.first_name, owners.last_name, cars.make, cars.model FROM OWNEDCARS JOIN Cars ON cars.id = OWNEDCARS.CAR_ID JOIN Owners ON owners.id = OWNEDCARS.OWNER_ID ORDER BY owners.first_name;
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name", "Last Name", "# of Cars Sold", "Total Sales"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
         String username = "S25_crc140", password = "xs43qECa";
         String ename;
         int original_empno = 0;
@@ -176,9 +185,8 @@ public class DatabaseViews extends javax.swing.JFrame {
                 String totalSales = parts[3].split(": ")[1];
                 String output = firstName + " " + lastName + " sold " + carsSold + " cars and brought in $" + totalSales + ". ";
                 s.append(output);
+                model2.addRow(new Object[]{firstName, lastName, carsSold, totalSales});
             }
-            jLabel2.setPreferredSize(new Dimension(300, 60));
-            jLabel2.setText("<html>" + s.toString() + "</html>");
             rset.close();
         } 
         catch (Exception e) {
@@ -186,6 +194,11 @@ public class DatabaseViews extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Location", "# of Cars Sold", "Total Sales"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
         String username = "S25_crc140", password = "xs43qECa";
         String ename;
         int original_empno = 0;
@@ -203,7 +216,7 @@ public class DatabaseViews extends javax.swing.JFrame {
             System.out.println("logged into oracle as " + username);
             conn.setAutoCommit(false);
             stmt = conn.createStatement();
-            ResultSet rset = stmt.executeQuery("SELECT * FROM S25_MW222.locationProfit FETCH FIRST 10 ROWS ONLY");
+            ResultSet rset = stmt.executeQuery("SELECT * FROM S25_MW222.locationProfit");
             StringBuilder s = new StringBuilder();
             while (rset.next()){
                 String o = rset.getString(1);
@@ -216,12 +229,9 @@ public class DatabaseViews extends javax.swing.JFrame {
                 carsSold = carsSold.replaceAll("(?<!^)\"(?!$)", "");
                 revenue = revenue.replaceAll("(?<!^)\"(?!$)", "");
                 String finale = o + " sold " + carsSold + " cars and made $" + revenue + ". ";
-                System.out.println(o);
-                System.out.println(n);
                 s.append(finale);
+                model2.addRow(new Object[] {o, carsSold, revenue});
             }
-            jLabel2.setPreferredSize(new Dimension(300, 60));
-            jLabel2.setText("<html>" + s.toString() + "</html>");
             rset.close();
         } 
         catch (Exception e) {
@@ -229,6 +239,11 @@ public class DatabaseViews extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+         jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Make", "Number Sold"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
         String username = "S25_crc140", password = "xs43qECa";
         String ename;
         int original_empno = 0;
@@ -246,60 +261,54 @@ public class DatabaseViews extends javax.swing.JFrame {
             System.out.println("logged into oracle as " + username);
             conn.setAutoCommit(false);
             stmt = conn.createStatement();
-            ResultSet rset = stmt.executeQuery("SELECT * FROM S25_MW222.locationProfit FETCH FIRST 10 ROWS ONLY");
-            StringBuilder s = new StringBuilder();
-            while (rset.next()){
-
-            }
-        }
-            catch (Exception e) {
-            }
-    }//GEN-LAST:event_jButton3MouseClicked
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        String name = jTextField1.getText();
-        String[] names = name.split(" ");
-        if (name == ""){
-            jLabel2.setText("Please write your name.");
-        }
-        else{
-        String username = "S25_crc140", password = "xs43qECa";
-        String ename;
-        int original_empno = 0;
-        int empno;
-
-        keyboard = new BufferedReader(new InputStreamReader(System.in));
-
-        try {
-            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            System.out.println("Registered the driver...");
-            conn = DriverManager.getConnection(
-                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
-                username, password
-            );
-            System.out.println("logged into oracle as " + username);
-            conn.setAutoCommit(false);
-            stmt = conn.createStatement();
-            ResultSet rset = stmt.executeQuery("SELECT owners.first_name, owners.last_name, cars.make, cars.model, S25_DEO103.payment.balance FROM OWNEDCARS JOIN Cars ON cars.id = OWNEDCARS.CAR_ID JOIN Owners ON owners.id = OWNEDCARS.OWNER_ID JOIN S25_DEO103.payment ON S25_DEO103.payment.car_id = OWNEDCARS.CAR_ID AND S25_DEO103.payment.owner_id = OWNEDCARS.OWNER_ID WHERE owners.first_name = '" + names[0] + "' AND owners.last_name = '" + names[1] + "' ORDER BY owners.first_name");
+            ResultSet rset = stmt.executeQuery("SELECT * From S25_MW222.CarSold");
             StringBuilder s = new StringBuilder();
             while (rset.next()){
                 String fname = rset.getString(1);
-                System.out.println(fname);
                 String lname = rset.getString(2);
-                String make = rset.getString(3);
-                String model = rset.getString(4);
-                String balance = rset.getString(5);
-                String finale = fname + " " + lname + ", you own a " + make + " " + model + ", and you still owe $" + balance + " before it is paid off!";
-                s.append(finale);
+                model2.addRow(new Object[]{fname, lname});
             }
-            jLabel2.setPreferredSize(new Dimension(300, 60));
-            jLabel2.setText("<html>" + s.toString() + "</html>");
          }
         catch (Exception e) {
         }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+       jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Make", "Number Sold"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT * From S25_MW222.CarSold");
+            StringBuilder s = new StringBuilder();
+            while (rset.next()){
+                String fname = rset.getString(1);
+                String lname = rset.getString(2);
+                model2.addRow(new Object[]{fname, lname});
+            }
+         }
+        catch (Exception e) {
         }
     }//GEN-LAST:event_jButton4MouseClicked
 
+    
     /**
      * @param args the command line arguments
      */
@@ -345,8 +354,9 @@ public class DatabaseViews extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
