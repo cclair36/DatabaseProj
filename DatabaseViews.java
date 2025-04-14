@@ -229,7 +229,31 @@ public class DatabaseViews extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT * FROM S25_MW222.locationProfit FETCH FIRST 10 ROWS ONLY");
+            StringBuilder s = new StringBuilder();
+            while (rset.next()){
+
+            }
+        }
+            catch (Exception e) {
+            }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
