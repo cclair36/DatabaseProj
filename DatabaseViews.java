@@ -27,6 +27,9 @@ public class DatabaseViews extends javax.swing.JFrame {
      */
     public DatabaseViews() {
         initComponents();
+        jButton5.setVisible(false);
+        jButton6.setVisible(false);
+        jButton7.setVisible(false);
     }
 
     /**
@@ -46,6 +49,10 @@ public class DatabaseViews extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,32 +103,69 @@ public class DatabaseViews extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Cars Available for Purchase");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Dealers in Your Area");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        jButton7.setText("Purchased Cars, their Owners, and the Payment Left");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(173, 173, 173)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(126, 126, 126)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
-                                    .addComponent(jButton2)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(52, 52, 52)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addComponent(jButton4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton5)
+                                .addGap(58, 58, 58)
+                                .addComponent(jButton6)
+                                .addGap(178, 178, 178)
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(216, 216, 216)
+                                        .addComponent(jButton1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(169, 169, 169)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton3)
+                                            .addComponent(jButton2))))))))
+                .addContainerGap(433, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,17 +175,26 @@ public class DatabaseViews extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
-                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(59, 59, 59)
                         .addComponent(jButton1)
                         .addGap(81, 81, 81)
                         .addComponent(jButton2)
                         .addGap(124, 124, 124)
-                        .addComponent(jButton3)))
-                .addGap(55, 55, Short.MAX_VALUE))
+                        .addComponent(jButton3)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton5)
+                            .addComponent(jButton6)
+                            .addComponent(jButton7))
+                        .addGap(34, 34, 34)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127))))
         );
 
         pack();
@@ -171,7 +224,6 @@ public class DatabaseViews extends javax.swing.JFrame {
                 "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
                 username, password
             );
-            System.out.println("logged into oracle as " + username);
             conn.setAutoCommit(false);
             stmt = conn.createStatement();
             ResultSet rset = stmt.executeQuery("Select * from S25_MW222.bDealer");
@@ -213,7 +265,6 @@ public class DatabaseViews extends javax.swing.JFrame {
                 "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
                 username, password
             );
-            System.out.println("logged into oracle as " + username);
             conn.setAutoCommit(false);
             stmt = conn.createStatement();
             ResultSet rset = stmt.executeQuery("SELECT * FROM S25_MW222.locationProfit");
@@ -258,7 +309,6 @@ public class DatabaseViews extends javax.swing.JFrame {
                 "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
                 username, password
             );
-            System.out.println("logged into oracle as " + username);
             conn.setAutoCommit(false);
             stmt = conn.createStatement();
             ResultSet rset = stmt.executeQuery("SELECT * From S25_MW222.CarSold");
@@ -274,9 +324,13 @@ public class DatabaseViews extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-       jTable1.setModel(new DefaultTableModel(
+        Object s = jComboBox1.getSelectedItem();
+        String t = s.toString();
+        switch(t){
+            case ("David O. (Car Owner)"):
+        jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
-        new String[] {"Make", "Number Sold"} // column names
+        new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
         ));
         DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
         String username = "S25_crc140", password = "xs43qECa";
@@ -296,17 +350,401 @@ public class DatabaseViews extends javax.swing.JFrame {
             System.out.println("logged into oracle as " + username);
             conn.setAutoCommit(false);
             stmt = conn.createStatement();
-            ResultSet rset = stmt.executeQuery("SELECT * From S25_MW222.CarSold");
-            StringBuilder s = new StringBuilder();
+            ResultSet rset = stmt.executeQuery("SELECT owners.first_name, owners.last_name, cars.make, cars.model, S25_DEO103.payment.balance FROM OWNEDCARS JOIN Cars ON cars.id = OWNEDCARS.CAR_ID JOIN Owners ON owners.id = OWNEDCARS.OWNER_ID JOIN S25_DEO103.payment ON S25_DEO103.payment.car_id = OWNEDCARS.CAR_ID AND S25_DEO103.payment.owner_id = OWNEDCARS.OWNER_ID WHERE owners.first_name = 'David' AND owners.last_name = 'Ozowara' ORDER BY owners.first_name");
             while (rset.next()){
                 String fname = rset.getString(1);
                 String lname = rset.getString(2);
-                model2.addRow(new Object[]{fname, lname});
+                String make = rset.getString(3);
+                String model = rset.getString(4);
+                String balance = rset.getString(5);
+                model2.addRow(new Object[]{fname, lname, make, model, balance});
             }
+            jLabel1.setText("Welcome David. Here are the cars you own and your balance left on them.");
          }
         catch (Exception e) {
         }
+        break;
+        case("Kyle S. (Visitor)"):
+            jButton5.setVisible(true);
+            jButton6.setVisible(true);
+            jButton7.setVisible(false);
+            jLabel1.setText("Welcome Kyle. Which view would you like to see?");
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {} // column names
+        ));
+            break;
+        case ("Maximus W. (Visitor)"):
+            jButton5.setVisible(true);
+            jButton6.setVisible(true);
+            jButton7.setVisible(false);
+            jLabel1.setText("Welcome Max. Which view would you like to see?");
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
+        ));
+            break;
+        case ("Cody C. (Dealer)"):
+           jButton5.setVisible(true);
+            jButton6.setVisible(true);
+            jButton7.setVisible(true);
+            jLabel1.setText("Welcome Cody. Which view would you like to see?");
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {} // column names
+        )); 
+            break;
+    }
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        
+        Object s = jComboBox1.getSelectedItem();
+        String t = s.toString();
+        if (t == "Kyle S. (Visitor)"){
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Year", "Make", "Model", "Condition", "Title Condition"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT Cars.year, cars.make, cars.model, cars.condition, cars.title_condition FROM Cars LEFT OUTER JOIN OwnedCars ON OwnedCars.Car_ID = Cars.ID WHERE OwnedCars.Car_ID IS NULL");
+         while (rset.next()){
+                String year = rset.getString(1);
+                String make = rset.getString(2);
+                String model = rset.getString(3);
+                String condition = rset.getString(4);
+                String tcond = rset.getString(5);
+                model2.addRow(new Object[]{year, make, model, condition, tcond});
+            }
+         jLabel1.setText("Here are the available cars for purchase, Kyle.");
+        }
+        catch (Exception e) {
+        }
+        }
+        if (t == "Maximus W. (Visitor)"){
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Year", "Make", "Model", "Condition", "Title Condition"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT Cars.year, cars.make, cars.model, cars.condition, cars.title_condition FROM Cars LEFT OUTER JOIN OwnedCars ON OwnedCars.Car_ID = Cars.ID WHERE OwnedCars.Car_ID IS NULL");
+         while (rset.next()){
+                String year = rset.getString(1);
+                String make = rset.getString(2);
+                String model = rset.getString(3);
+                String condition = rset.getString(4);
+                String tcond = rset.getString(5);
+                model2.addRow(new Object[]{year, make, model, condition, tcond});
+            }
+         jLabel1.setText("Here are the available cars for purchase, Max.");
+        }
+        catch (Exception e) {
+        }
+        }
+        if (t == "Cody C. (Dealer)"){
+                jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Year", "Make", "Model", "Condition", "Title Condition"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT Cars.year, cars.make, cars.model, cars.condition, cars.title_condition FROM Cars LEFT OUTER JOIN OwnedCars ON OwnedCars.Car_ID = Cars.ID WHERE OwnedCars.Car_ID IS NULL");
+         while (rset.next()){
+                String year = rset.getString(1);
+                String make = rset.getString(2);
+                String model = rset.getString(3);
+                String condition = rset.getString(4);
+                String tcond = rset.getString(5);
+                model2.addRow(new Object[]{year, make, model, condition, tcond});
+            }
+         jLabel1.setText("Here are the available cars for purchase, Cody.");
+        }
+        catch (Exception e) {
+        }
+        }
+        if (t == "David O. (Car Owner"){
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"Year", "Make", "Model", "Condition", "Title Condition"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT Cars.year, cars.make, cars.model, cars.condition, cars.title_condition FROM Cars LEFT OUTER JOIN OwnedCars ON OwnedCars.Car_ID = Cars.ID WHERE OwnedCars.Car_ID IS NULL");
+         while (rset.next()){
+                String year = rset.getString(1);
+                String make = rset.getString(2);
+                String model = rset.getString(3);
+                String condition = rset.getString(4);
+                String tcond = rset.getString(5);
+                model2.addRow(new Object[]{year, make, model, condition, tcond});
+            }
+         jLabel1.setText("Here are the available cars for purchase, David.");
+        }
+        catch (Exception e) {
+        }
+        }    
+        
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        Object s = jComboBox1.getSelectedItem();
+        String t = s.toString();
+        if (t == "Kyle S. (Visitor)"){
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name", "Last Name", "Location"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("Select S25_DEO103.Dealers.firstname, S25_DEO103.Dealers.lastname, S25_DEO103.Location.name FROM S25_DEO103.Dealers JOIN S25_DEO103.Location ON S25_DEO103.Dealers.location_id = S25_DEO103.Location.ID");
+         while (rset.next()){
+                String fname = rset.getString(1);
+                String lname = rset.getString(2);
+                String loname = rset.getString(3);
+                model2.addRow(new Object[]{fname, lname, loname});
+            }
+         jLabel1.setText("Here are the dealers and their locations, Kyle.");
+        }
+        catch (Exception e) {
+        }
+        }
+        if (t == "Maximus W. (Visitor)"){
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name", "Last Name", "Location"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("Select S25_DEO103.Dealers.firstname, S25_DEO103.Dealers.lastname, S25_DEO103.Location.name FROM S25_DEO103.Dealers JOIN S25_DEO103.Location ON S25_DEO103.Dealers.location_id = S25_DEO103.Location.ID");
+         while (rset.next()){
+               String fname = rset.getString(1);
+                String lname = rset.getString(2);
+                String loname = rset.getString(3);
+                model2.addRow(new Object[]{fname, lname, loname});
+            }
+         jLabel1.setText("Here are the dealers and their locations, Max.");
+        }
+        catch (Exception e) {
+        }
+        }
+        if (t == "Cody C. (Dealer)"){
+         jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name", "Last Name", "Location"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("Select S25_DEO103.Dealers.firstname, S25_DEO103.Dealers.lastname, S25_DEO103.Location.name FROM S25_DEO103.Dealers JOIN S25_DEO103.Location ON S25_DEO103.Dealers.location_id = S25_DEO103.Location.ID");
+         while (rset.next()){
+               String fname = rset.getString(1);
+                String lname = rset.getString(2);
+                String loname = rset.getString(3);
+                model2.addRow(new Object[]{fname, lname, loname});
+            }
+         jLabel1.setText("Here are the dealers and their locations, Cody.");
+        }
+        catch (Exception e) {
+        }
+        }
+        if (t == "David O. (Car Owner)"){
+             jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name", "Last Name", "Location"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("Select S25_DEO103.Dealers.firstname, S25_DEO103.Dealers.lastname, S25_DEO103.Location.name FROM S25_DEO103.Dealers JOIN S25_DEO103.Location ON S25_DEO103.Dealers.location_id = S25_DEO103.Location.ID");
+         while (rset.next()){
+               String fname = rset.getString(1);
+                String lname = rset.getString(2);
+                String loname = rset.getString(3);
+                model2.addRow(new Object[]{fname, lname, loname});
+            }
+         jLabel1.setText("Here are the dealers and their locations, David.");
+        }
+        catch (Exception e) {
+        }
+        }    
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        Object s = jComboBox1.getSelectedItem();
+        String t = s.toString();
+        if (t != "Cody C. (Dealer)"){
+            jLabel1.setText("You do not have permission to view this. Please sign in as a dealer.");
+        }
+        else{
+            jTable1.setModel(new DefaultTableModel(
+        new Object[][] {}, // initial empty rows
+        new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
+        ));
+        DefaultTableModel model2 = (DefaultTableModel) jTable1.getModel();
+        String username = "S25_crc140", password = "xs43qECa";
+        String ename;
+        int original_empno = 0;
+        int empno;
+
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            System.out.println("Registered the driver...");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@oracle2.wiu.edu:1521/orclpdb1",
+                username, password
+            );
+            System.out.println("logged into oracle as " + username);
+            conn.setAutoCommit(false);
+            stmt = conn.createStatement();
+            ResultSet rset = stmt.executeQuery("SELECT owners.first_name, owners.last_name, cars.make, cars.model, S25_DEO103.payment.balance FROM OWNEDCARS JOIN Cars ON cars.id = OWNEDCARS.CAR_ID JOIN Owners ON owners.id = OWNEDCARS.OWNER_ID JOIN S25_DEO103.payment ON S25_DEO103.payment.car_id = OWNEDCARS.CAR_ID AND S25_DEO103.payment.owner_id = OWNEDCARS.OWNER_ID ORDER BY owners.first_name");
+            while (rset.next()){
+                String fname = rset.getString(1);
+                String lname = rset.getString(2);
+                String make = rset.getString(3);
+                String model = rset.getString(4);
+                String balance = rset.getString(5);
+                model2.addRow(new Object[]{fname, lname, make, model, balance});
+            }
+            jLabel1.setText("Cody, here are all the cars and the payments left on them.");
+         }
+        catch (Exception e) {
+        }
+        }
+    }//GEN-LAST:event_jButton7MouseClicked
 
     
     /**
@@ -342,11 +780,6 @@ public class DatabaseViews extends javax.swing.JFrame {
                 new DatabaseViews().setVisible(true);
             }
         });
-        String s = "tot_cars_sold: '22' tot_revenue: '2250.5'";
-            String[] p = s.split("tot_r");
-            for (int i = 0; i < p.length; i++){
-                System.out.println(p[i]);
-            }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -354,7 +787,11 @@ public class DatabaseViews extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
