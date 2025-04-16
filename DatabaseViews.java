@@ -326,8 +326,11 @@ public class DatabaseViews extends javax.swing.JFrame {
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         Object s = jComboBox1.getSelectedItem();
         String t = s.toString();
+        jButton5.setVisible(true);
+        jButton6.setVisible(true);
         switch(t){
             case ("David O. (Car Owner)"):
+        jLabel1.setText("Hello David...");
         jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
         new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
@@ -381,7 +384,7 @@ public class DatabaseViews extends javax.swing.JFrame {
             jLabel1.setText("Welcome Max. Which view would you like to see?");
             jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
-        new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
+        new String[] {} // column names
         ));
             break;
         case ("Cody C. (Dealer)"):
@@ -516,7 +519,7 @@ public class DatabaseViews extends javax.swing.JFrame {
         catch (Exception e) {
         }
         }
-        if (t == "David O. (Car Owner"){
+        if (t == "David O. (Car Owner)"){
             jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
         new String[] {"Year", "Make", "Model", "Condition", "Title Condition"} // column names
