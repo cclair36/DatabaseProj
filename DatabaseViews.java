@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package databaseproject;
 
 import java.awt.Dimension;
 import java.io.BufferedReader;
@@ -326,11 +327,11 @@ public class DatabaseViews extends javax.swing.JFrame {
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         Object s = jComboBox1.getSelectedItem();
         String t = s.toString();
-        jButton5.setVisible(true);
-        jButton6.setVisible(true);
         switch(t){
             case ("David O. (Car Owner)"):
-        jLabel1.setText("Hello David...");
+        jButton5.setVisible(true);
+        jButton6.setVisible(true);
+        jButton7.setVisible(false);
         jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
         new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
@@ -384,7 +385,7 @@ public class DatabaseViews extends javax.swing.JFrame {
             jLabel1.setText("Welcome Max. Which view would you like to see?");
             jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
-        new String[] {} // column names
+        new String[] {"First Name","Last Name", "Make", "Model", "Balance"} // column names
         ));
             break;
         case ("Cody C. (Dealer)"):
@@ -519,7 +520,7 @@ public class DatabaseViews extends javax.swing.JFrame {
         catch (Exception e) {
         }
         }
-        if (t == "David O. (Car Owner)"){
+        if (t == "David O. (Car Owner"){
             jTable1.setModel(new DefaultTableModel(
         new Object[][] {}, // initial empty rows
         new String[] {"Year", "Make", "Model", "Condition", "Title Condition"} // column names
@@ -742,7 +743,7 @@ public class DatabaseViews extends javax.swing.JFrame {
                 String balance = rset.getString(5);
                 model2.addRow(new Object[]{fname, lname, make, model, balance});
             }
-            jLabel1.setText("Cody, here are all the cars and the payments left on them.");
+            jLabel1.setText("Welcome David. Here are the cars you own and your balance left on them.");
          }
         catch (Exception e) {
         }
